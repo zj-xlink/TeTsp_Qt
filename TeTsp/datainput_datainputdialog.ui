@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DataInput_DataInputDialog</class>
+ <widget class="QDialog" name="DataInput_DataInputDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>623</width>
+    <height>448</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>数据导入</string>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>350</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Cancel</set>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>150</y>
+     <width>561</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>对侧数据</string>
+   </property>
+   <widget class="QPushButton" name="pb_side_x">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>21</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X分量</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_side_x">
+    <property name="geometry">
+     <rect>
+      <x>131</x>
+      <y>24</y>
+      <width>411</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_side_y">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>51</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Y分量</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_side_y">
+    <property name="geometry">
+     <rect>
+      <x>131</x>
+      <y>54</y>
+      <width>411</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_side_z">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>81</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Z分量</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_side_z">
+    <property name="geometry">
+     <rect>
+      <x>131</x>
+      <y>84</y>
+      <width>411</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_4">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>280</y>
+     <width>161</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>原始数据信息</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>31</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> 炮数： </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_origin_spotnums">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>31</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_origin_samplenums">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>61</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>61</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> 样点数： </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>91</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> 采用时间： </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_origin_sampletime">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>91</y>
+      <width>51</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_5">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>280</y>
+     <width>161</width>
+     <height>131</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>数据抽取</string>
+   </property>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>31</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> 采用时间： </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_extract_sampletime">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>31</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>61</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> 样点数： </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_extract_samplenums">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>61</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>91</y>
+      <width>76</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string> 总时间： </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_extract_sumtime">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>91</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>561</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>主侧数据</string>
+   </property>
+   <widget class="QLineEdit" name="lE_main_x">
+    <property name="geometry">
+     <rect>
+      <x>131</x>
+      <y>24</y>
+      <width>411</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_main_x">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>21</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X分量</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_main_y">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>51</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Y分量</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_main_y">
+    <property name="geometry">
+     <rect>
+      <x>131</x>
+      <y>54</y>
+      <width>411</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lE_main_z">
+    <property name="geometry">
+     <rect>
+      <x>131</x>
+      <y>84</y>
+      <width>411</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pb_main_z">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>81</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Z分量</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pB_ok">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>350</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>确定</string>
+   </property>
+  </widget>
+  <zorder>groupBox_3</zorder>
+  <zorder>groupBox_4</zorder>
+  <zorder>groupBox_5</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>buttonBox</zorder>
+  <zorder>pB_ok</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

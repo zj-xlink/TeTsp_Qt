@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>stylesheet.qss</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file alias="circleButton.png">res/rounded-rectangle.png</file>
+    </qresource>
+</RCC>

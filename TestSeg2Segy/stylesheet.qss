@@ -1,0 +1,23 @@
+QPushButton {
+    border-width: 4px;
+    background-image: url(:/image/circleButton.png);
+    border-image: url(:/image/circleButton.png) 4 4 4 4 stretch stretch;
+}// 鼠标指向效果
+
+QPushButton::hovered {
+    border-width: 0px;
+    //background-image: url(:/image/circleButton.png);
+    border-image: url(:/image/circleButton.png) 1 1 1 1 stretch stretch;
+}// 按下效果
+
+QPushButton::pressed {
+    border-width: 0px;
+    //background-image: url(:/image/circleButton.png);
+    border-image: url(:/image/circleButton.png) 1 1 1 1 stretch stretch;
+}// 默认按钮及tab焦点
+
+QPushButton ::default{
+    border-width: 0px;
+    //background-image: url(:/image/circleButton.png);
+    border-image: url(:/image/circleButton.png) 1 1 1 1 stretch stretch;
+}
