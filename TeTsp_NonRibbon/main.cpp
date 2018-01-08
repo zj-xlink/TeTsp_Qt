@@ -4,7 +4,7 @@
 int main(int argc, char *argv[])
 {
     QApplication app( argc, argv );
-    app.setStyle(new RibbonStyle);
+    //app.setStyle(new RibbonStyle);
 
     app.setApplicationName("QtitanRibbon Controls Sample");
     app.setOrganizationName("Developer Machines");

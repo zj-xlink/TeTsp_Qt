@@ -9,13 +9,11 @@
 #include <QTextEdit>
 #include <QHBoxLayout>
 #include <QMessageBox>
+#include <QMenuBar>
 
-#include "QtnRibbonDef.h"
-#include "QtnRibbonQuickAccessBar.h"
 #include "datainput_preeditdialog.h"
 #include "datainput_datainputdialog.h"
 
-#include "aboutdialog.h"
 #include "mainwindow.h"
 #include "seismicplotwidget.h"
 #include "seismicdata.h"
@@ -29,11 +27,12 @@
 
 /* MainWindow */
 MainWindow::MainWindow(QWidget* parent)
-    : Qtitan::RibbonMainWindow(parent)
+    :QMainWindow(parent)
+    //: Qtitan::RibbonMainWindow(parent)
 {
     // 设置样式
-    m_ribbonStyle = qobject_cast<Qtitan::RibbonStyle*>(qApp->style());
-    m_ribbonStyle->setTheme(OfficeStyle::Office2016White);
+    //m_ribbonStyle = qobject_cast<Qtitan::RibbonStyle*>(qApp->style());
+    //m_ribbonStyle->setTheme(OfficeStyle::Office2016White);
     // 设置默认字号
     m_defaultFont = 8;
     // 设置标题
@@ -46,29 +45,30 @@ MainWindow::MainWindow(QWidget* parent)
 
 
     // 使能ribbon主题
-    ribbonBar()->setFrameThemeEnabled();
-    ribbonBar()->setTitleBarVisible(false);
+    //ribbonBar()->setFrameThemeEnabled();
+    //ribbonBar()->setTitleBarVisible(false);
     // 创建系统菜单
-    createMenuFile();
+    //createMenuFile();
+    createNonRibbonMenu();
     // 创建快速按钮
-    createQuickAccessBar();
+    //createQuickAccessBar();
     // 创建Ribbon按钮
-    createRibbon();
+    //createRibbon();
     // 创建状态栏
-    statusBar();
+    //statusBar();
 
-    QAction* actionAbout = ribbonBar()->addAction(QIcon(":/res/about.png"), "About", Qt::ToolButtonIconOnly);
-    actionAbout->setToolTip(tr("Display program<br />information, version number and copyright"));
-    connect(actionAbout, SIGNAL(triggered()), this, SLOT(about()));
+    //QAction* actionAbout = ribbonBar()->addAction(QIcon(":/res/about.png"), "About", Qt::ToolButtonIconOnly);
+    //actionAbout->setToolTip(tr("Display program<br />information, version number and copyright"));
+    //connect(actionAbout, SIGNAL(triggered()), this, SLOT(about()));
     // 创建样式选项
-    createOptions();
+    //createOptions();
 
     // 添加Ribbon隐藏功能
-    m_actionRibbonMinimize = ribbonBar()->addAction(QIcon(":/res/ribbonMinimize.png"), "Minimize the Ribbon", Qt::ToolButtonIconOnly);
-    m_actionRibbonMinimize->setStatusTip(tr("Show only the tab names on the Ribbon"));
-    m_actionRibbonMinimize->setShortcut(tr("Ctrl+F1"));
-    connect(m_actionRibbonMinimize, SIGNAL(triggered()), this, SLOT(maximizeToggle()));
-    connect(ribbonBar(), SIGNAL(minimizationChanged(bool)), this, SLOT(minimizationChanged(bool)));
+    //m_actionRibbonMinimize = ribbonBar()->addAction(QIcon(":/res/ribbonMinimize.png"), "Minimize the Ribbon", Qt::ToolButtonIconOnly);
+    //m_actionRibbonMinimize->setStatusTip(tr("Show only the tab names on the Ribbon"));
+    //m_actionRibbonMinimize->setShortcut(tr("Ctrl+F1"));
+    //connect(m_actionRibbonMinimize, SIGNAL(triggered()), this, SLOT(maximizeToggle()));
+    //connect(ribbonBar(), SIGNAL(minimizationChanged(bool)), this, SLOT(minimizationChanged(bool)));
 
 
     // 设置窗口位置与大小
@@ -82,7 +82,7 @@ MainWindow::~MainWindow()
 {
 }
 
-void MainWindow::createMenuFile()
+/*void MainWindow::createMenuFile()
 {
     QIcon iconLogo;
     iconLogo.addPixmap(QPixmap(":/res/qtitan.png"));
@@ -572,6 +572,7 @@ void MainWindow::setDPIToggled(bool on)
     m_actionExLarge->setEnabled(on);
     m_ribbonStyle->setDPIAware(on);
 }
+*/
 
 /*** 数据导入槽函数 ***/
 void MainWindow::dataInput_refresh()  // 数据刷新
@@ -607,3 +608,19 @@ void MainWindow::dataInput_setObserver() // 设置观测系统
 
 }
 
+void MainWindow::createNonRibbonMenu()
+{
+    QMenu* dataInput = menuBar()->addMenu(tr("  预处理  "));
+
+    QAction* dataInput_preDeal =  dataInput->addAction(QIcon(":/res/ribbon/datainput_preDeal.png"), tr("数据转换"));
+    dataInput_preDeal->setShortcut(tr("Ctrl+N"));
+    connect(dataInput_preDeal,SIGNAL(triggered()),this,SLOT(dataInput_preDeal()));
+
+    QAction* dataInput_loadData =  dataInput->addAction(QIcon(":/res/ribbon/datainput_loadData.png"), tr("数据转换"));
+    dataInput_loadData->setShortcut(tr("Ctrl+N"));
+    connect(dataInput_loadData,SIGNAL(triggered()),this,SLOT(dataInput_loadData()));
+
+    QAction* dataInput_observer =  dataInput->addAction(QIcon(":/res/ribbon/datainput_observer.png"), tr("数据转换"));
+    dataInput_observer->setShortcut(tr("Ctrl+N"));
+    connect(dataInput_observer,SIGNAL(triggered()),this,SLOT(dataInput_setObserver()));
+}
